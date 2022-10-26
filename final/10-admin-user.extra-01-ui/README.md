@@ -80,7 +80,7 @@ abstraction for this in `app/server.session.ts`. Then we'll use that abstraction
 in the other routes. Remember to apply it to both the `loader` and `action`
 functions.
 
-NOTE, the `ADMIN_EMAIL` is set in the `.env` file as `kody@remix.run`. The
+NOTE, the `ADMIN_EMAIL` is set in the `.env` file as `kody@kcd.dev`. The
 `prisma/seed.ts` script sets that user's password to `kodylovesyou`.
 
 ## 🗃 Files

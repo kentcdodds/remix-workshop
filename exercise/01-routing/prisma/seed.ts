@@ -4,7 +4,7 @@ import bcrypt from "bcryptjs";
 const prisma = new PrismaClient();
 
 async function seed() {
-  const email = "kody@remix.run";
+  const email = "kody@kcd.dev";
 
   // cleanup the existing database
   await prisma.user.delete({ where: { email } }).catch(() => {
