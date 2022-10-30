@@ -1,4 +1,4 @@
-# 08. Error handling
+# 10. Admin User
 
 ## 📝 Notes
 
