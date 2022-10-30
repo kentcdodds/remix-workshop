@@ -107,6 +107,9 @@ export default function PostAdmin() {
             defaultValue={data?.post?.slug}
             disabled={Boolean(data.post)}
           />
+          {data.post ? (
+            <input type="hidden" name="slug" value={data.post.slug} />
+          ) : null}
         </label>
       </p>
       <p>
