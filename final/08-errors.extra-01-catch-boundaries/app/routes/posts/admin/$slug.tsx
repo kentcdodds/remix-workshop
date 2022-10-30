@@ -133,7 +133,17 @@ export default function PostAdmin() {
           defaultValue={data?.post?.markdown}
         />
       </p>
-      <div className="flex justify-end gap-4">
+      <div className="flex flex-row-reverse gap-4">
+        <button
+          type="submit"
+          name="intent"
+          value={isNewPost ? "create" : "update"}
+          className="rounded bg-blue-500 py-2 px-4 text-white hover:bg-blue-600 focus:bg-blue-400 disabled:bg-blue-300"
+          disabled={isCreating || isUpdating}
+        >
+          {isNewPost ? (isCreating ? "Creating..." : "Create") : null}
+          {isNewPost ? null : isUpdating ? "Updating..." : "Update"}
+        </button>
         {isNewPost ? null : (
           <button
             type="submit"
@@ -145,16 +155,6 @@ export default function PostAdmin() {
             {isDeleting ? "Deleting..." : "Delete"}
           </button>
         )}
-        <button
-          type="submit"
-          name="intent"
-          value={isNewPost ? "create" : "update"}
-          className="rounded bg-blue-500 py-2 px-4 text-white hover:bg-blue-600 focus:bg-blue-400 disabled:bg-blue-300"
-          disabled={isCreating || isUpdating}
-        >
-          {isNewPost ? (isCreating ? "Creating..." : "Create") : null}
-          {isNewPost ? null : isUpdating ? "Updating..." : "Update"}
-        </button>
       </div>
     </Form>
   );
