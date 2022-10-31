@@ -27,11 +27,11 @@ component. For example:
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 
-export const loader = async ({ request }) => {
+export async function loader({ request }) {
   const userId = await requireUserId(request);
   const flights = await getUserFlights(userId);
   return json({ flights }); // <-- send the data from your backend
-};
+}
 
 export default function FlightsRoute() {
   const { flights } = useLoaderData(); // <-- get the data into your UI
@@ -158,6 +158,9 @@ As an extra tip, it's pretty common practice to put interaction with database
 models in a special module responsible for that specifically, so you can create
 a file at `app/models/posts.server.ts` and put a `getPosts` function in that.
 We'll be adding more functions to that module soon.
+
+NOTE: We've already got the data model setup and posts in the database so you
+should be set to use prisma.
 
 **Files**:
 

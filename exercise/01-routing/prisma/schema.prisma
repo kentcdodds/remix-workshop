@@ -23,3 +23,12 @@ model Password {
   user   User   @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   userId String @unique
 }
+
+model Post {
+  slug     String @id
+  title    String
+  markdown String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

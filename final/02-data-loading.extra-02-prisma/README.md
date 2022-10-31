@@ -27,11 +27,11 @@ component. For example:
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 
-export const loader = async ({ request }) => {
+export async function loader({ request }) {
   const userId = await requireUserId(request);
   const flights = await getUserFlights(userId);
   return json({ flights }); // <-- send the data from your backend
-};
+}
 
 export default function FlightsRoute() {
   const { flights } = useLoaderData(); // <-- get the data into your UI

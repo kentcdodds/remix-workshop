@@ -14,11 +14,11 @@ async function getPosts() {
   ];
 }
 
-export const loader = async () => {
+export async function loader() {
   return json({
     posts: await getPosts(),
   });
-};
+}
 
 export default function Posts() {
   const { posts } = useLoaderData();
